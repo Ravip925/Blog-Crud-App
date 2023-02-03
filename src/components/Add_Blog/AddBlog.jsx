@@ -3,9 +3,9 @@ import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import styled from "styled-components";
-import { publicRequest } from "../requestMethods";
-import { mobile } from "../responsive";
-import Footer from "./Footer";
+import { publicRequest } from "../../requestMethods";
+import { mobile } from "../../responsive";
+import Footer from "../Footer/Footer";
 
 const Container = styled.div`
   width: 100%;
@@ -27,6 +27,7 @@ const Container = styled.div`
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
+    marginTop: "30px",
   })}
 `;
 const Wrapper = styled.div`

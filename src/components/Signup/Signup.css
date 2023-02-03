@@ -45,3 +45,23 @@
 	color: white;
 	margin: 10px;
 }
+
+.green_btn:active {
+	background-color: #287b6b;
+}
+
+.white_btn:active {
+	background-color: rgb(156, 183, 206);
+}
+
+@media screen and (max-width:425px) {
+	.form_container h1 {
+		text-align: center;
+		width: 100%;
+		font-size: 1rem;
+	}
+
+	.error_msg {
+		width: 100%;
+	}
+}

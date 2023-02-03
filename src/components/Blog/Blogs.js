@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { publicRequest } from "../../requestMethods";
 import { mobile } from "../../responsive";
-import Footer from "../Footer";
+import Footer from "../Footer/Footer";
 import Blog from "./Blog";
 import "./blog.css";
 

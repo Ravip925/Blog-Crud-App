@@ -58,3 +58,13 @@
 	color: white;
 	margin: 10px;
 }
+
+@media screen and (max-width:425px) {
+	.input {
+		width: 100%;
+	}
+
+	.error_msg {
+		width: 100%;
+	}
+}

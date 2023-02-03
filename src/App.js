@@ -1,12 +1,12 @@
 import "./App.css";
 import { Navigate, Route, Routes } from "react-router";
 import Home from "./Pages/Home";
-import AddBlog from "./components/AddBlog";
+import AddBlog from "./components/Add_Blog/AddBlog";
 import BlogDetail from "./components/Blog/BlogDetail";
 import Blogs from "./components/Blog/Blogs";
 import Signup from "./components/Signup/Signup";
 import Login from "./components/Login/Login";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 
 function App() {
   const token = localStorage.getItem("token");
