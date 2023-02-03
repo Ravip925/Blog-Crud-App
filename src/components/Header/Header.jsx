@@ -34,7 +34,7 @@ const Header = ({ token }) => {
 
   useEffect(() => {
     const setResponsiveness = () => {
-      return window.innerWidth < 550 ? setMobView(!mobView) : setMobView(false);
+      return window.innerWidth < 550 ? setMobView(true) : setMobView(false);
     };
 
     setResponsiveness();
