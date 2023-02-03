@@ -1,2 +1,2 @@
 <h1>Live On =></h1>
-<h3>https://crud-api-for-blogging.onrender.com</h3>
+<h3>https://blog-crud-app.netlify.app/</h3>
