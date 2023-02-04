@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import styled from "styled-components";
-import { publicRequest } from "../../requestMethods";
+import { userRequest } from "../../requestMethods";
 import { mobile } from "../../responsive";
 import Footer from "../Footer/Footer";
 
@@ -62,14 +62,15 @@ const AddBlog = () => {
   };
 
   const sendRequest = async () => {
-    await publicRequest
+    await userRequest
       .post("/blogs", {
         name: String(inputs.name),
         auther: String(inputs.auther),
         description: String(inputs.description),
         body: String(inputs.body),
       })
-      .then((res) => res.data);
+      .then((res) => res.data)
+      .catch((err) => alert(err.message));
   };
 
   const handleSubmit = (e) => {
@@ -101,7 +102,7 @@ const AddBlog = () => {
               marginRight={"auto"}
               marginTop={10}
             >
-              <FormLabel>Name</FormLabel>
+              <FormLabel>Title</FormLabel>
               <TextField
                 size="small"
                 value={inputs.name}

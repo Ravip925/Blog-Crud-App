@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { publicRequest } from "../../requestMethods";
+import { userRequest } from "../../requestMethods";
 import "./blog.css";
 
 const Blog = (props) => {
@@ -7,7 +7,7 @@ const Blog = (props) => {
   const navigate = useNavigate();
 
   const handleDelete = async () => {
-    await publicRequest
+    await userRequest
       .delete(`/blogs/${_id}`)
       .then((res) => res.data)
       .then(() => window.location.reload() && navigate("/"));

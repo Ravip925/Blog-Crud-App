@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { Button, FormLabel, TextField } from "@mui/material";
 import { Box } from "@mui/system";
-import { publicRequest } from "../../requestMethods";
+import { userRequest } from "../../requestMethods";
 import "./blog.css";
 import Footer from "../Footer/Footer";
 
@@ -13,16 +13,17 @@ const BlogDetail = () => {
 
   useEffect(() => {
     const fetchHandler = async () => {
-      await publicRequest
+      await userRequest
         .get(`/blogs/${id}`)
         .then((res) => res.data)
-        .then((data) => setInputs(data.blog));
+        .then((data) => setInputs(data.blog))
+        .catch((err) => console.log(err));
     };
     fetchHandler();
   }, [id]);
 
   const sendRequest = async () => {
-    await publicRequest
+    await userRequest
       .put(`/blogs/${id}`, {
         name: String(inputs.name),
         auther: String(inputs.auther),
@@ -62,7 +63,7 @@ const BlogDetail = () => {
                 marginRight={"auto"}
                 marginTop={10}
               >
-                <FormLabel>Name</FormLabel>
+                <FormLabel>Title</FormLabel>
                 <TextField
                   value={inputs.name}
                   onChange={handleChange}

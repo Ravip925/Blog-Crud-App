@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { publicRequest } from "../../requestMethods";
+import { userRequest } from "../../requestMethods";
 import { mobile } from "../../responsive";
 import Footer from "../Footer/Footer";
 import Blog from "./Blog";
@@ -28,14 +28,16 @@ const Spinner = styled.div`
 `;
 
 const fetchHandler = async () => {
-  return await publicRequest.get("/blogs").then((res) => res.data);
+  return await userRequest.get("/blogs").then((res) => res.data);
 };
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState("");
 
   useEffect(() => {
-    fetchHandler().then((data) => setBlogs(data.blogs));
+    fetchHandler()
+      .then((data) => setBlogs(data.blogs))
+      .catch((err) => console.log(err));
   }, []);
 
   return (
