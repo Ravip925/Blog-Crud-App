@@ -100,7 +100,7 @@ const BlogDetail = () => {
                   name="body"
                 />
                 <Button variant="contained" type="submit" sx={{ mt: "15px" }}>
-                  Update Book
+                  Update Blog
                 </Button>
               </Box>
             </form>
